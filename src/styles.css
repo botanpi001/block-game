@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.block-palette {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.block {
+  width: 60px;
+  height: 60px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: grab;
+  font-size: 28px;
+  user-select: none;
+}
+
+.drop-zone {
+  width: 90vw;
+  max-width: 500px;
+  height: 400px;
+  background-color: white;
+  border: 2px dashed #aaa;
+  border-radius: 12px;
+  position: relative;
+}
+
+.placed-block {
+  position: absolute;
+  font-size: 28px;
+  pointer-events: none;
+}
