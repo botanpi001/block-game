@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ブロックゲーム</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>ウボンゴ2D（純JS版）</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>ウボンゴ2D</h1>
+    <div class="controls">
+      <button id="prevBtn" aria-label="前の問題へ">◀</button>
+      <span id="levelLabel">問題 1 / 5</span>
+      <button id="nextBtn" aria-label="次の問題へ">▶</button>
+      <button id="resetBtn" class="secondary" aria-label="この問題をやり直す">リセット</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="board-wrap">
+      <!-- 盤面（レスポンシブ正方形） -->
+      <canvas id="board" aria-label="盤面" tabindex="0"></canvas>
+      <div id="toast" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="tray-wrap">
+      <h2>ピース</h2>
+      <div id="tray" class="tray" aria-label="ピース置き場"></div>
+      <div class="tips">
+        <p>PC：左クリックで掴む→ドラッグ→離して配置／ダブルクリックで右回転</p>
+        <p>タブレット：0.3秒長押しで掴む→指を離して配置／ダブルタップで右回転</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 右下の常時表示 回転ボタン（選択中ピースが90°回転） -->
+  <button id="rotateBtn" class="floating-rotate" aria-label="回転">↻</button>
+
+  <script src="game.js"></script>
+</body>
 </html>
